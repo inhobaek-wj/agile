@@ -19,6 +19,7 @@ These methods and methodologies address all of the areas of traditional software
 ### * Scrum
 
 가장 대표적인 Agile methodology 이며 Project management 와 Product development 에 중점을 두고 다음과 같은 특징을 갖는다
+
 - Sprint 라는 일정 주기로 반복되는 일련의 process 를 거치며 진행한다.
 - 한 번의 Sprint 안에서 Sprint planning, Daily Scrum, Sprint Review, Retrospective 등의 활동을 한다.
 - 관찰 -> 적응을 반복하며 **지속적인 개선** 에 가치를 둔다.
@@ -74,6 +75,7 @@ These methods and methodologies address all of the areas of traditional software
 ### * XP(Extreme Programming)
 
 Agile methodology 중 하나로 다음과 같은 특징을 갖는다
+
 - Scrum 과 유사하게 일정 주기로 반복되는 process 를 거쳐 진행하며
 - Scrum 과 달리 programming team 이 그들의 일을 더 잘 할 수 있도록 돕는 것에 초점을 맞춘다.
 - Scrum 과 달리 특정 역할을 부여하지 않고 모든 팀원이 모든 일을 다 조금씩 하고, 때에 따라 팀원의 skill 에 맞춰 일을 맡아 진행한다.
@@ -83,6 +85,7 @@ Agile methodology 중 하나로 다음과 같은 특징을 갖는다
 ### * Lean/Kanban
 
 Lean/Kanban은 Agile의 mindset/tool 중 하나이며 lean의 원칙(principles)은 다음과 같다.
+
 1. Eliminate waste
 2. Amplify learning
 3. Decide as late as possible
@@ -103,41 +106,41 @@ Lean/Kanban은 Agile의 mindset/tool 중 하나이며 lean의 원칙(principles)
 6. Motion(phisically)
 7. Defects
 
-## Common Policy
+## With Redmine
 
-0. 이는 절대적인 것이 아니며 협의를 통해 언제든 수정할 수 있다.
+1. Project setup
+    - 부모 project - 자식 프로젝트로 구조로 구성하고,
+    - 자식 프로젝트는 repository 별로 만든다.
 
-1. Daily meeting
-    - 팀은 매일 오후 10시 15분부터 15분동안 **어제 한 일, 오늘 할 일, 이슈** 에 대해 간략히 공유한다.
-
-2. Work item(issue)
-    - Work item 은 **User story** 이거나 **Bug** 이거나 **문서작업** 이어야 한다.
-    - User story 는 (개발을 의뢰한)Client 의 요구사항을 반영해 (가능한) 구성원들의 협의를 통해 작성한다.
-    - User story 는 다음 형식을 따른다. <누가> <무엇을 했을때> <어떻게 된다>
-
+2. Product backlog
+    - 부모 project에서 만들고 Tracker를 Story 로 설정한다.
+        - **Tracker** : Redmine issue card 에 추가할 수 있는 필드로, 우리는 해당 work item 의 성격을 구분하기 위해 사용하며 크게 다음과 같다.
+	- Product Owner가 관리하며 각 story를 이해하고 있어야 하며,
+	- Sprint planning meeting 전에 정리해놓아야 한다. -> 우선 순위, 대략의 Done 기준.
+    - 다음 형식으로 제목을 정한다. <누가> <무엇을 했을때> <어떻게 된다>
         ex) 관리자가 진열 상품을 선택해 삭제 버튼을 누르면 해당 상품에서 삭제된다, 회원/비회원이 주문 시 필수 옵션을 선택하지 않고 주문을 하면 주문이 실패한다
-    - User story 형식으로 만든 아이템은 추후 **테스트 시나리오** 로 사용할 수 있다.
-    - **Tracker** : Redmine issue card 에 추가할 수 있는 필드로, 우리는 해당 work item 의 성격을 구분하기 위해 사용하며 크게 다음과 같다.
+
+3. Sprint backlog
+    - Sprint planning meeting 때 product backlog를 develop team이 task 단위로 나누어 자식 project에 만든다.
+    - 이때, Story point도 추정한다.
+    - 다음과 같은 tracker를 가질 수 있다.
         - Feature
         - Bug fix
         - Test
-        - Document
-        - Not Anymore: 더이상 사용하지 않는 기능
-    - **Category** : Redmine issue card 에 추가할 수 있는 필드로, 해당 work item 을 그룹핑하기 위해 사용한다.
-        - ex) Order, Sell, Point, etc...
 
-3. Work flow
-기본적으로 개발은 [github-flow](https://guides.github.com/introduction/flow/) (Branch 를 생성하여 작업한 뒤 pull request -> merge 하는 방식) 를 따라 진행해 본다. (참고: 명시적 versioning 에 적합한 [git-flow](https://nvie.com/posts/a-successful-git-branching-model/))
-권장 [[Git Commit convention]]
+4. Agile board
+- 다음은 Redmine agile board의 각 column에 대한 설명이다.
 
     1. Backlog
+        - 아직 구현 전인 task가 쌓여있다.
         - 상단에 위치할 수록 우선 순위가 높다.
 
     2. In Progress:Develop
-        - Backlog column 에 있는 work item 을 pulling 하는 방식으로 진행한다.
-        - Pulling 할 때 Assignee 에 자신의 이름을 입력한다.
-        - 한 사람이 최대 1개의 item 만 해당 column 에 pulling 한다.
-        - 작업이 끝나면 pull request 를 한 뒤 Waiting column 으로 옮긴다.
+        - 현재 진행중인 task가 쌓여있다.
+        - Backlog column 에 있는 task를 작업자가 가져와서 일을 진행한다.
+        - 작업자는 해당 task를 가져올 때 Assignee 에 자신의 이름을 입력한다.
+        - 한번에 단 1개의 task만 작업하자.
+        - 작업이 끝나고 pull request 를 한 뒤 Waiting column 으로 옮긴다.
         - 만약 작업을 끝내지 못하고, 작업을 진행할 수 없는 경우에도 Waiting column 으로 옮긴 뒤 새로운 item 을 가져와 진행한다.
         - Waiting column 으로 옮길 때는 **반드시 Notes 에** 사유를 남기도록 한다. (ex) 서버 작업이 아직 안되서 waiting, pull request wating
 
@@ -145,25 +148,19 @@ Lean/Kanban은 Agile의 mindset/tool 중 하나이며 lean의 원칙(principles)
         - Pull Request 를 했거나, 기타 다른 상황으로 인해 개발을 완료하지 못하고 대기해야 하거나, Done? column 에 갔다가 문제를 발견해 다시 개발해야하는 item 이 위치하는 column.
 
     4. Done?
-        - Pull Request 를 통해 (간단한) Code review 후 Merge 가 되면 Done? column 으로 item 을 옮긴다.
+        - Pull Request 를 통해 Code review 후 Merge 가 되면 Done? column 으로 item 을 옮긴다.
+
+    5. On hold
+        - PR이 아닌 다른 사유로 대기중인 task들.
 
 
-4. Sprint
-Scrum 에서 이야기하는 일정 주기를 갖고 진행하는 process 이며, 해당 기간 안에 달성할 item 들이 있다.
-Redmine 에 Sprint 메뉴가 있지만, Agile board 에서 sprint 로 filtering 이 되지 않으므로,
-이것이 가능한 Redmine 의 **Version** 을 Sprint 로 활용한다.
+## 그외 준수 사항
 
-5. Sprint Review
-(개발을 의뢰한) Client 와 기타 이해 관계자들과 함께 이번 Sprint 에서 개발한 것을 demo 를 통해 확인한다.
-Sprint Review 전에 Done? column 에 있는 item 들을 미리 테스트하는 것을 권장하며, 테스트 시 문제가 없으면 Accepted 로 상태를 변경한다.
+1. 기본적으로 개발은 [github-flow](https://guides.github.com/introduction/flow/) (Branch 를 생성하여 작업한 뒤 pull request -> merge 하는 방식) 를 따라 진행해 본다. (참고: 명시적 versioning 에 적합한 [git-flow](https://nvie.com/posts/a-successful-git-branching-model/))
+권장 [[Git Commit convention]]
 
-6. Retrospective
-이번 Sprint 에서 좋았던 점, 개선하면 좋을 점 등을 나누며 이 시간에 지금 읽고 있는 문서를 수정하게 될 것이다.
 
-7. Sprint planning
-Product owner 가 새로 시작할 Sprint 에 넣을 item 을 선정하고 (필요하다면) 세부 내용을 설명하며, 각 item 에 story point 를 매긴다.
-
-8. Code Review
+2. Code Review
     - 코드 리뷰의 목적:
         코드를 좋은 품질로 유지하기 위함
     - 좋은 품질의 코드란?:
