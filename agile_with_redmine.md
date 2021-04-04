@@ -20,11 +20,11 @@ These methods and methodologies address all of the areas of traditional software
 
 가장 대표적인 Agile methodology 이며 Project management 와 Product development 에 중점을 두고 다음과 같은 특징을 갖는다
 - Sprint 라는 일정 주기로 반복되는 일련의 process 를 거치며 진행한다.
-- 한 번의 Sprint 안에는 Sprint planning, Daily Scrum, Sprint Review, Retrospective 가 있다.
-- 여타 Agile methodology 처럼 **지속적인 개선** 에 가치를 둔다.
+- 한 번의 Sprint 안에서 Sprint planning, Daily Scrum, Sprint Review, Retrospective 등의 활동을 한다.
+- 관찰 -> 적응을 반복하며 **지속적인 개선** 에 가치를 둔다.
 - Roles in Scrum team
-    - **Product Owner** : (개발을 의뢰한) Client 와 밀접하게 communication 하여 User story 를 정리하여 **Backlog 생성, 우선 순위를 관리** 하며 Backlog 의 **세부 사항을 모두 파악** 하여 Development team 에 전달해야 하는 사람.
-    - Scrum Master: 팀원들의 agile 적응 및 (우리의 경우) Redmine 사용을 도와주는 사람.
+    - **Product Owner** : **Product Backlog 생성, 우선 순위를 관리** 하며 Product Backlog 의 **세부 사항을 모두 파악** 하여 Development team 에 전달할 수 있는 사람.
+    - Scrum Master:  팀이 스크럼을 배우고 적용하여 비즈니스 가치를 획득하도록, 팀이 성공하도록 돕는 것이 주 역할이며, 우리의 경우 Redmine 사용을 도와주는 사람.
     - Development team
 
 ### * XP(Extreme Programming)
