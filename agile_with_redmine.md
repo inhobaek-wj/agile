@@ -27,6 +27,50 @@ These methods and methodologies address all of the areas of traditional software
     - Scrum Master:  팀이 스크럼을 배우고 적용하여 비즈니스 가치를 획득하도록, 팀이 성공하도록 돕는 것이 주 역할이며, 우리의 경우 Redmine 사용을 도와주는 사람.
     - Development team
 
+
+1.  Product Backlog
+	- 우선순위가 있는 비즈니스 가치를 담고 있는 요구사항 목록.
+	- 고객이 원하는 것을 고객의 용어로 설명한 것.
+	- Product Owner가 관리하며 각 story를 이해하고 있어야 한다.
+	- Sprint planning meeting 전에 정리해놓아야 한다. -> 우선 순위, 대략의 Done 기준.
+	- 개발시간(story point) 추정은 develop teem이 하며 이것은 팀의 고유 권한이다.
+	- Redmine에서
+		- 부모 project에서 만들고 Tracker를 Story 로 설정한다.
+
+2. Sprint planning meeting
+	- 필수 참석자: Product Owner, Scrum Master, Develop team
+	- 다음 사항을 논의하거나 정해야 한다.
+		- (비즈니스 가치를 내포한) Sprint 목표.
+		- 오는 Sprint의 기간을 정한다.
+			- Redmine에서 기간에 맞게 version을 생성한다.
+		- 각 Story의 Done을 최대한 명확히 한다.
+		- Sprint backlog(task)를 만들어 story point를 추정한다.
+			- Redmine에서 자식 프로젝트에 만들고 Tracker를 Feature로 설정한다.
+			- 각 task의 시작 날짜, 종료 날짜 version을 sprint에 맞게 설정한다.
+		- 참여하는 팀원 목록 및 참여 수준을 고려한 팀의 추정 속도.
+		- Story point와 팀의 추정 속도를 바탕으로 이번 sprint에서 작업할 story 선정.
+	- Meeting이 끝나면 Scrum master가 Mattermost Agile channel에 요약해 올린다.
+
+3. Daily scrum meeting
+	- 필수 참석자: Develop team
+    - 팀은 매일 정해진 시간에 15분동안 **어제 한 일, 오늘 할 일, 이슈** 에 대해 간략히 공유한다.
+
+4. Sprint Review meeting
+	- 필수 참석자: Product Owner, Scrum Master, Develop team
+	- 그외 참석자: 프로젝트 관계자들
+	- 목적: 팀과 Product Owner가 현재 상황을 파악하고, 조언을 구하는 등 서로 깊은 대화를 나누기 위함.
+		- 이 시간을 통해 Product owner는 제품이나 팀이 지금 어떻게 진행되고 있는지 알게 되고, 팀은 시장과 비즈니스에 어떤 일이 진행되고 있는지 알게 된다.
+
+5. Sprint Retrospective meeting
+	- 필수 참석자: Scrum Master, Develop team
+	- 다음 사항을 함께 이야기한다.
+		- Sprint 결과.
+		- 이번 스프린트에서 우리 팀이 잘한 일.
+		- 이번 스프린트에서 우리 팀이 부족했던 점.
+		- 다음 스프린트에서 우리 팀이 개선하면 좋을 점.
+	- Meeting이 끝나면 Scrum master가 Mattermost Agile channel에 요약해 올린다.
+
+
 ### * XP(Extreme Programming)
 
 Agile methodology 중 하나로 다음과 같은 특징을 갖는다
@@ -61,10 +105,10 @@ Lean/Kanban은 Agile의 mindset/tool 중 하나이며 lean의 원칙(principles)
 
 ## Common Policy
 
-0. 이는 절대적인 것이 아니며 협의를 통해 언제든 변경/추가/삭제할 수 있다.
+0. 이는 절대적인 것이 아니며 협의를 통해 언제든 수정할 수 있다.
 
 1. Daily meeting
-    - 매일 오후 1시까지 Mattermost 의 해당 프로젝트 'DailyScrum' channel 에 **어제 한 일, 오늘 할 일, 이슈** 에 대해 간략히 공유한다.
+    - 팀은 매일 오후 10시 15분부터 15분동안 **어제 한 일, 오늘 할 일, 이슈** 에 대해 간략히 공유한다.
 
 2. Work item(issue)
     - Work item 은 **User story** 이거나 **Bug** 이거나 **문서작업** 이어야 한다.
