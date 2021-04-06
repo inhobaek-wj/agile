@@ -113,20 +113,22 @@ Lean/Kanban은 Agile의 mindset/tool 중 하나이며 lean의 원칙(principles)
     - 자식 프로젝트는 repository 별로 만든다.
 
 2. Product backlog
-    - 부모 project에서 만들고 Tracker를 Story 로 설정한다.
+    - 부모 project에서 만들고 Tracker를 Story 로 설정하고 story라고 부른다.
         - **Tracker** : Redmine issue card 에 추가할 수 있는 필드로, 우리는 해당 work item 의 성격을 구분하기 위해 사용하며 크게 다음과 같다.
 	- Product Owner가 관리하며 각 story를 이해하고 있어야 하며,
 	- Sprint planning meeting 전에 정리해놓아야 한다. -> 우선 순위, 대략의 Done 기준.
-    - 다음 형식으로 제목을 정한다. <누가> <무엇을 했을때> <어떻게 된다>
+    - description에 Done의 기준 또는 시나리오를 다음 형식으로 적는다. <누가> <무엇을 했을때> <어떻게 된다>
         ex) 관리자가 진열 상품을 선택해 삭제 버튼을 누르면 해당 상품에서 삭제된다, 회원/비회원이 주문 시 필수 옵션을 선택하지 않고 주문을 하면 주문이 실패한다
 
 3. Sprint backlog
     - Sprint planning meeting 때 product backlog를 develop team이 task 단위로 나누어 자식 project에 만든다.
     - 이때, Story point도 추정한다.
-    - 다음과 같은 tracker를 가질 수 있다.
+    - 다음과 같은 tracker를 가질 수 있으며 task라고 부른다.
         - Feature
         - Bug fix
         - Test
+    - 개발 시 참고 사항 등을 description에 적는다.
+    - 개발 시 checklist를 활용하면 진행 상황을 파악하는데 도움이 된다.
 
 4. Agile board
 - 다음은 Redmine agile board의 각 column에 대한 설명이다.
